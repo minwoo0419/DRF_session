@@ -13,7 +13,6 @@ class AlbumSerializer(serializers.ModelSerializer):
         fields = ['id', 'artist', 'title', 'year', 'description', 'tracks']
 
 class TrackSerializer(serializers.ModelSerializer):
-    id = serializers.CharField(read_only=True)
     album = serializers.SerializerMethodField()
     def get_album(self, instance):
         return instance.album.title
