@@ -19,5 +19,5 @@ class TrackSerializer(serializers.ModelSerializer):
         return instance.album.title
     class Meta:
         model = Track
-        fields = ['album', 'number', 'title', 'id']
+        fields = ['album', 'number', 'title']
         read_only_fields = ['album']
